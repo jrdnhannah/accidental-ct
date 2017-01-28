@@ -6,7 +6,7 @@ options:
 
 
 syncs:
-  ad-system-sync:
+  app-sync:
       # enable terminal_notifier. On every sync sends a Terminal Notification regarding files being synced. ( Mac Only ).
       # good thing in case you are developing and want to know exactly when your changes took effect.
       # be aware in case of unison this only gives you a notification on the initial sync, not the syncs after changes.

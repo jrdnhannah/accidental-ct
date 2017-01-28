@@ -54,6 +54,6 @@ class RegisterController extends Controller
             $request->request->get('password')
         ));
 
-        return redirect()->route('');
+        return redirect()->to('/foo');
     }
 }

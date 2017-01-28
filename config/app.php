@@ -167,6 +167,9 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        Fideloper\Proxy\TrustedProxyServiceProvider::class,
+        SmoothPhp\LaravelAdapter\ServiceProvider::class,
+        SmoothPhp\QueryBus\Laravel\LaravelQueryBusServiceProvider::class,
 
         /*
          * Application Service Providers...
