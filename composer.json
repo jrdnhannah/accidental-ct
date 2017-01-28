@@ -21,7 +21,8 @@
             "database"
         ],
         "psr-4": {
-            "NhsHd\\AccidentalCt\\Laravel\\": "app/"
+            "NhsHd\\AccidentalCt\\Laravel\\": "app/",
+            "NhsHd\\AccidentalCt\\": "src/"
         }
     },
     "autoload-dev": {
