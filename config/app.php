@@ -173,9 +173,9 @@ return [
          */
         NhsHd\AccidentalCt\Laravel\Providers\AppServiceProvider::class,
         NhsHd\AccidentalCt\Laravel\Providers\AuthServiceProvider::class,
-        // NhsHd\AccidentalCt\Laravel\Providers\BroadcastServiceProvider::class,
         NhsHd\AccidentalCt\Laravel\Providers\EventServiceProvider::class,
         NhsHd\AccidentalCt\Laravel\Providers\RouteServiceProvider::class,
+        NhsHd\AccidentalCt\Laravel\Providers\DatabaseServiceProvider::class,
 
     ],
 
