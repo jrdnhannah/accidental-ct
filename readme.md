@@ -1,4 +1,4 @@
-# Accidental CT Scan Reporting
+# Unintended CT Scan Reporting
 ## NHS Hack Day
 
 For research purposes only!
