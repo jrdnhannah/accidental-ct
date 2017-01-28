@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  app:
+    volumes:
+      - app-sync:/var/www:rw # will be mounted on /var/www
+
+volumes:
+  app-sync:
+    external: true

@@ -1,0 +1,47 @@
+version: "2"
+
+services:
+  https-portal:
+    image: steveltn/https-portal:1.0.0
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    links:
+      - nginx
+    environment:
+      STAGE: "local"
+      DOMAINS: "dizinga.local -> http://nginx"
+
+  nginx:
+    image: nginx:1.11
+    restart: always
+    environment:
+      VIRTUAL_HOST: "dizinga.local"
+    volumes_from:
+      - app
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - app
+
+  app:
+    build: ./
+    volumes:
+      - ./:/var/www
+    links:
+      - db
+    restart: always
+
+  db:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=accidental-ct
+    ports:
+      - "33061:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
