@@ -1,0 +1,24 @@
+body{
+
+    font-family: "Raleway", "Calibri", sans-serif;
+    font-size: 16px;
+    color: #0b0606;
+
+    #top-bar{
+        width: 100%;
+        height: 3rem;
+        border-bottom: 2px solid #888888;
+
+        #login-or-register{
+            float: right;
+            padding-right: 30px;
+
+            a{
+            }
+        }
+    }
+}
+
+.disappear{
+    display: none;
+}
