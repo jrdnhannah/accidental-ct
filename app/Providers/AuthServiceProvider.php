@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace NhsHd\AccidentalCt\Laravel\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'NhsHd\AccidentalCt\Laravel\Model' => 'NhsHd\AccidentalCt\Laravel\Policies\ModelPolicy',
     ];
 
     /**

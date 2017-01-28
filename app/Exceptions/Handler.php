@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace NhsHd\AccidentalCt\Laravel\Exceptions;
 
 use Exception;
 use Illuminate\Auth\AuthenticationException;

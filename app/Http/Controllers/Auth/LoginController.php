@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace NhsHd\AccidentalCt\Laravel\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use NhsHd\AccidentalCt\Laravel\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
