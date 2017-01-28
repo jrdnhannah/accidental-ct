@@ -1,0 +1,24 @@
+options:
+  compose-file-path: 'docker-compose.yml'
+  compose-dev-file-path: 'docker-compose-dev.yml'
+
+  unison_image: 'eugenmayer/unison-unox'
+
+
+syncs:
+  ad-system-sync:
+      # enable terminal_notifier. On every sync sends a Terminal Notification regarding files being synced. ( Mac Only ).
+      # good thing in case you are developing and want to know exactly when your changes took effect.
+      # be aware in case of unison this only gives you a notification on the initial sync, not the syncs after changes.
+      notify_terminal: false
+
+      src: './'
+      dest: '/var/www'
+
+      # optional, default can be either rsync or unison See Strategies in the wiki for explanation
+      sync_strategy: 'unison'
+
+      sync_args:
+        - "-ignore='Path .idea'"
+        - "-ignore='Path .git'"
+        - "-ignore='BelowPath .git'"
