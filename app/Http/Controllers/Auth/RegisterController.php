@@ -2,10 +2,14 @@
 
 namespace NhsHd\AccidentalCt\Laravel\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use NhsHd\AccidentalCt\Laravel\Http\Request\Auth\Registration;
 use NhsHd\AccidentalCt\Laravel\User;
 use NhsHd\AccidentalCt\Laravel\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use NhsHd\AccidentalCt\User\Command\RegisterUser;
+use SmoothPhp\Contracts\CommandBus\CommandBus;
 
 class RegisterController extends Controller
 {
@@ -22,50 +26,34 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+    /** @var CommandBus */
+    private $bus;
 
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param CommandBus $bus
      */
-    public function __construct()
+    public function __construct(CommandBus $bus)
     {
         $this->middleware('guest');
+        $this->bus = $bus;
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Handle a registration request for the application.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param Registration $request
+     * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
+    public function register(Registration $request): \Illuminate\Http\Response
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
-    }
+        $this->bus->execute(new RegisterUser(
+            uuid(),
+            $request->request->get('email'),
+            $request->request->get('password')
+        ));
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        return redirect()->route('');
     }
 }
