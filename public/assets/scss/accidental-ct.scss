@@ -11,11 +11,19 @@ html{
         #top-bar{
             border-bottom: 0.5rem solid #888888;
 
+            #logo{
+                background-image: url(../images/logo.png);
+                height: 63px;
+                width: 120px;
+                background-size: cover;
+                float: right;
+                margin-right: 30px;
+            }
+
             #login-or-register{
                 padding: 1rem;
                 margin: 1rem;
                 float: right;
-                margin-right: 30px;
 
                 &:hover{
                     background: #87B7C3;
@@ -38,7 +46,7 @@ html{
                 label{
                     padding-left: 0.5rem;
 
-                    input{
+                    input[type="text"], input[type="password"], input[type="email"]{
                         width: 80%;
                         display: block;
                         padding: 0.5rem;

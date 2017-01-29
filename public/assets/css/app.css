@@ -8,11 +8,17 @@ html {
     font-weight: bold; }
     html body #top-bar {
       border-bottom: 0.5rem solid #888888; }
+      html body #top-bar #logo {
+        background-image: url(/assets/img/logo.png);
+        height: 63px;
+        width: 120px;
+        background-size: cover;
+        float: right;
+        margin-right: 30px; }
       html body #top-bar #login-or-register {
         padding: 1rem;
         margin: 1rem;
-        float: right;
-        margin-right: 30px; }
+        float: right; }
         html body #top-bar #login-or-register:hover {
           background: #87B7C3;
           color: #57727C;
@@ -28,13 +34,13 @@ html {
         border-radius: 1rem; }
         html body #main .section-wrapper label {
           padding-left: 0.5rem; }
-          html body #main .section-wrapper label input {
+          html body #main .section-wrapper label input[type="text"], html body #main .section-wrapper label input[type="password"], html body #main .section-wrapper label input[type="email"] {
             width: 80%;
             display: block;
             padding: 0.5rem;
             border: none;
             border-radius: 0.5rem; }
-            html body #main .section-wrapper label input:disabled {
+            html body #main .section-wrapper label input[type="text"]:disabled, html body #main .section-wrapper label input[type="password"]:disabled, html body #main .section-wrapper label input[type="email"]:disabled {
               background: #cccccc; }
         html body #main .section-wrapper .row .one-third {
           padding: 1rem 0;
