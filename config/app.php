@@ -170,6 +170,7 @@ return [
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         SmoothPhp\LaravelAdapter\ServiceProvider::class,
         SmoothPhp\QueryBus\Laravel\LaravelQueryBusServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
