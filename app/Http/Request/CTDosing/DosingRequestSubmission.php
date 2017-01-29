@@ -29,7 +29,7 @@ final class DosingRequestSubmission extends Request
             'ma_modulation'                 => 'required|boolean',
             'rotation_time'                 => 'required|numeric',
             'collimation'                   => 'required|string',
-            'irradiated_slice_width'        => 'required|numeric',
+            'irradiated_slice_width'        => 'required',
             'is_helical_scan'               => 'required|boolean',
             'couch_feed_per_rotation'       => 'required|numeric',
             'couch_increment'               => 'required|numeric',

@@ -4,6 +4,7 @@ namespace NhsHd\AccidentalCt\Laravel\Http\Controllers\CTDosing;
 
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 use NhsHd\AccidentalCt\CTDosing\Command\CompletePatientCtDoseRequestForm;
 use NhsHd\AccidentalCt\Laravel\Http\Controllers\Controller;
 use NhsHd\AccidentalCt\Laravel\Http\Request\CTDosing\DosingRequestSubmission;
@@ -37,7 +38,7 @@ final class DoseRequestController extends Controller
     /**
      * @return View
      */
-    public function showDosingRequestForm(): View
+    public function showDosingRequestForm(Request $request): View
     {
         return view('dosing_requests.form');
     }

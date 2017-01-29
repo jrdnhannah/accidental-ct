@@ -25,10 +25,12 @@ $router->group(
 
 $router->group(
     [
-        'prefix'    => 'dosing',
-        'namespace' => 'CTDosing',
+        'prefix'     => 'dosing',
+        'namespace'  => 'CTDosing',
+        'middleware' => ['web'],
     ],
     function (Router $router): void {
         $router->get('/request', ['uses' => 'DoseRequestController@showDosingRequestForm', 'as' => 'dose_request.form']);
+        $router->post('/submit', ['uses' => 'DoseRequestController@submitDosingRequest', 'as' => 'dose_request.submit']);
     }
 );
