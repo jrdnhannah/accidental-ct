@@ -30,7 +30,7 @@ class CtDoseRequests extends Migration
                 $table->float('mA');
                 $table->boolean('ma_modulation');
                 $table->float('rotation_time');
-                $table->float('collimation');
+                $table->string('collimation');
                 $table->float('irradiated_slice_width');
                 $table->boolean('is_helical_scan');
                 $table->float('couch_feed_per_rotation');

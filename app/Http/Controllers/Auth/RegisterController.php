@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use NhsHd\AccidentalCt\User\Command\RegisterUser;
 use SmoothPhp\Contracts\CommandBus\CommandBus;
+use Symfony\Component\HttpFoundation\Response;
 
 class RegisterController extends Controller
 {
@@ -46,10 +47,11 @@ class RegisterController extends Controller
      * @param Registration $request
      * @return \Illuminate\Http\Response
      */
-    public function register(Registration $request): \Illuminate\Http\Response
+    public function register(Registration $request): Response
     {
         $this->bus->execute(new RegisterUser(
             uuid(),
+            $request->request->get('name'),
             $request->request->get('email'),
             $request->request->get('password')
         ));
