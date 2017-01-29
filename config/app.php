@@ -179,6 +179,7 @@ return [
         NhsHd\AccidentalCt\Laravel\Providers\EventServiceProvider::class,
         NhsHd\AccidentalCt\Laravel\Providers\RouteServiceProvider::class,
         NhsHd\AccidentalCt\Laravel\Providers\DatabaseServiceProvider::class,
+        NhsHd\AccidentalCt\Laravel\Providers\ViewServiceProvider::class,
 
     ],
 
