@@ -13,4 +13,10 @@ $(document).ready(function(){
         $('#login-wrapper').removeClass('disappear');
         $('#register-wrapper').removeClass('disappear');
     });
+
+    $('input, textarea').on('keydown keyup change click', function(){
+        var identifier = $(this).attr('name');
+        var content = $(this).val();
+        $('td#' + identifier).html(content);
+    });
 });

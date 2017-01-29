@@ -70,6 +70,13 @@ html {
           border-bottom: none; }
         html body #main .section-wrapper #register-or-forgot-your-password {
           font-size: 1.2rem; }
+        html body #main .section-wrapper table {
+          background: #eeeeee;
+          width: 100%; }
+          html body #main .section-wrapper table tr td {
+            border: 1px solid #87B7C3;
+            height: 1.1rem;
+            width: 24%; }
 
 .clearfix:after {
   visibility: hidden;
