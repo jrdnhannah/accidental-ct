@@ -27,7 +27,7 @@ $router->group(
     [
         'prefix'     => 'dosing',
         'namespace'  => 'CTDosing',
-        'middleware' => ['web'],
+        'middleware' => ['web', 'loggedin'],
     ],
     function (Router $router): void {
         $router->get('/request', ['uses' => 'DoseRequestController@showDosingRequestForm', 'as' => 'dose_request.form']);
