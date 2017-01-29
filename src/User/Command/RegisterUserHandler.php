@@ -39,9 +39,11 @@ final class RegisterUserHandler
     public function handle(RegisterUser $command): void
     {
         $this->client->query()->table('users')->insert([
-            'user_id'       => $command->getUserId(),
+            'id'            => $command->getUserId(),
             'email'         => $command->getEmail(),
+            'name'          => $command->getName(),
             'password'      => $encryptedPass = bcrypt($command->getPassword()),
+            'hospital'      => 'Cardiff',
             'created_at'    => Carbon::now(),
             'updated_at'    => Carbon::now(),
         ]);

@@ -10,15 +10,16 @@ $router->get('/', function () {
 
 $router->group(
     [
-        'prefix'    => 'auth',
-        'namespace' => 'Auth',
+        'prefix'     => 'auth',
+        'namespace'  => 'Auth',
+        'middleware' => ['web'],
     ],
     function (Router $router) {
         $router->get('/register', ['uses' => 'RegisterController@showRegistrationForm']);
         $router->get('/login',    ['uses' => 'LoginController@showLoginForm']);
 
-        $router->post('/register', ['uses' => 'RegisterController@register']);
-        $router->post('/login',    ['uses' => 'LoginController@login']);
+        $router->post('/register', ['uses' => 'RegisterController@register', 'as' => 'auth.post_register']);
+        $router->post('/login',    ['uses' => 'LoginController@login', 'as' => 'auth.post_login']);
     }
 );
 

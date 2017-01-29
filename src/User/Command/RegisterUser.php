@@ -17,19 +17,23 @@ final class RegisterUser extends BaseCommand
     private $email;
     /** @var string */
     private $password;
+    /** @var string */
+    private $name;
 
     /**
      * RegisterUser constructor.
      *
      * @param string $userId
+     * @param string $name
      * @param string $email
      * @param string $password
      */
-    public function __construct(string $userId, string $email, string $password)
+    public function __construct(string $userId, string $name, string $email, string $password)
     {
         $this->userId = $userId;
         $this->email = $email;
         $this->password = $password;
+        $this->name = $name;
     }
 
     /**
@@ -54,5 +58,13 @@ final class RegisterUser extends BaseCommand
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
     }
 }
