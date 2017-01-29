@@ -3,12 +3,23 @@
 @section('content')
     <div id="main">
         <div id="main-wrapper" class="section-wrapper clearfix">
-            <form id="ct-data-form">
+            <form id="ct-data-form" action="{{ route('dose_request.submit') }}" method="post">
+
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <div class="row clearfix">
                     <div class="one-third">
                         <label class="form-label">
                             Hospital name
-                            <input type="text" id="hospital-name" disabled="disabled"/>
+                            <input type="text" id="hospital-name" disabled="disabled" value="{{ request()->user()->hospital }}"/>
                         </label>
                     </div>
                     <div class="one-third">
@@ -66,9 +77,8 @@
                     <div class="one-third">
                         <label class="form-label">mA modulation</label><br/>
                         <select name="ma_modulation">
-                            <option value="smartma" selected>SmartmA</option>
-                            <option value="automa">AutomA</option>
-                            <option value="other">Other</option>
+                            <option value="1" selected>SmartmA</option>
+                            <option value="0">AutomA</option>
                         </select>
                     </div>
                     <div class="one-third">
@@ -98,9 +108,9 @@
                     <div class="one-third">
                         <label class="form-label">Helical scan</label>
                         <br/>
-                        <label><input type="radio" name="is_helical_scan" id="helical-yes"/>Yes</label>
+                        <label><input type="radio" name="is_helical_scan" id="helical-yes" value="1"/>Yes</label>
                         <br/>
-                        <label><input type="radio" name="is_helical_scan" id="helical-no" checked />No</label>
+                        <label><input type="radio" name="is_helical_scan" id="helical-no" value="0" checked />No</label>
                     </div>
                     <div class="one-third">
                         <label class="form-label">
@@ -129,7 +139,7 @@
                     <div class="one-third">
                         <label class="form-label">
                             Image thickness
-                            <input type="text" id="image-thickness" name="image_thickness" value="2mm"/>
+                            <input type="text" id="image-thickness" name="image_thickness" value="2"/>
                         </label>
                     </div>
                     <div class="one-third"></div>
@@ -154,6 +164,11 @@
                     <div class="full-width">
                         <label class="form-label">Other notes</label>
                         <textarea rows="4" id="notes" name="notes">Blah blah blah</textarea>
+                    </div>
+
+                    <div class="full-width">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>

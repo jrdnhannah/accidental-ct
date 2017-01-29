@@ -37,7 +37,7 @@ final class CompletePatientCtDoseRequestForm extends BaseCommand
     private $rotationTime;
     /** @var string */
     private $collimation;
-    /** @var string */
+    /** @var float */
     private $irradiatedSliceWidth;
     /** @var bool */
     private $isHelicalScan;
@@ -76,7 +76,7 @@ final class CompletePatientCtDoseRequestForm extends BaseCommand
      * @param bool   $maModulation
      * @param float  $rotationTime
      * @param string $collimation
-     * @param string $irradiatedSliceWidth
+     * @param float  $irradiatedSliceWidth
      * @param bool   $isHelicalScan
      * @param float  $couchFeedPerRotation
      * @param float  $couchIncrement
@@ -245,9 +245,9 @@ final class CompletePatientCtDoseRequestForm extends BaseCommand
     }
 
     /**
-     * @return string
+     * @return float
      */
-    public function getIrradiatedSliceWidth(): string
+    public function getIrradiatedSliceWidth(): float
     {
         return $this->irradiatedSliceWidth;
     }
