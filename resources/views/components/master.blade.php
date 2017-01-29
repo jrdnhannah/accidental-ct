@@ -2,9 +2,7 @@
 <html>
     @include('components.head')
     <body>
-        @if (!request()->user())
-            @include('components.topBar')
-        @endif
+        @include('components.top-bar')
 
         <div id="main">
             @yield('content')
