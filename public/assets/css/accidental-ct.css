@@ -1,0 +1,73 @@
+html {
+  font-size: 13px; }
+  html body {
+    font-family: "Raleway", "Calibri", sans-serif;
+    font-size: 1.0rem;
+    color: #87B7C3;
+    font-weight: bold; }
+    html body #top-bar {
+      border-bottom: 0.5rem solid #888888; }
+      html body #top-bar #login-or-register {
+        padding: 1rem;
+        margin: 1rem;
+        float: right;
+        margin-right: 30px; }
+        html body #top-bar #login-or-register:hover {
+          background: #87B7C3;
+          color: #57727C;
+          cursor: pointer; }
+    html body #main {
+      margin: 0 auto;
+      width: 50%;
+      padding: 3rem;
+      background: #87B7C3; }
+      html body #main .section-wrapper {
+        padding: 2rem;
+        background: #57727C;
+        border-radius: 1rem; }
+        html body #main .section-wrapper label {
+          padding-left: 0.5rem; }
+          html body #main .section-wrapper label input[type="text"] {
+            width: 80%;
+            display: block;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.5rem; }
+            html body #main .section-wrapper label input[type="text"]:disabled {
+              background: #cccccc; }
+        html body #main .section-wrapper .row .one-third {
+          padding: 1rem 0;
+          padding-left: 1rem;
+          width: calc(33.3% - 1rem);
+          float: left;
+          border-bottom: 0.5rem solid #888888;
+          min-height: 72px;
+          vertical-align: top; }
+          html body #main .section-wrapper .row .one-third select {
+            width: 80%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.5rem; }
+        html body #main .section-wrapper .row .full-width {
+          float: left;
+          width: 100%;
+          margin: 0 auto;
+          padding: 1rem 0;
+          border-bottom: 0.5rem solid #888888; }
+          html body #main .section-wrapper .row .full-width label {
+            padding-left: 2.5rem; }
+          html body #main .section-wrapper .row .full-width textarea {
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+            padding: 1rem;
+            border: none;
+            border-radius: 1rem;
+            overflow: hidden;
+            resize: none; }
+        html body #main .section-wrapper .row > div:last-child {
+          border-bottom: none; }
+        html body #main .section-wrapper #register-or-forgot-your-password {
+          font-size: 1.2rem; }
+
+/*# sourceMappingURL=accidental-ct.css.map */
