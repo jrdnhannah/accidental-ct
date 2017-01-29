@@ -27,13 +27,13 @@ html {
         border-radius: 1rem; }
         html body #main .section-wrapper label {
           padding-left: 0.5rem; }
-          html body #main .section-wrapper label input[type="text"] {
+          html body #main .section-wrapper label input {
             width: 80%;
             display: block;
             padding: 0.5rem;
             border: none;
             border-radius: 0.5rem; }
-            html body #main .section-wrapper label input[type="text"]:disabled {
+            html body #main .section-wrapper label input:disabled {
               background: #cccccc; }
         html body #main .section-wrapper .row .one-third {
           padding: 1rem 0;
