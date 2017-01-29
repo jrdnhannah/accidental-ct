@@ -21,3 +21,13 @@ $router->group(
         $router->post('/login',    ['uses' => 'LoginController@login']);
     }
 );
+
+$router->group(
+    [
+        'prefix'    => 'dosing',
+        'namespace' => 'CTDosing',
+    ],
+    function (Router $router): void {
+        $router->get('/request', ['uses' => 'DoseRequestController@showDosingRequestForm', 'as' => 'dose_request.form']);
+    }
+);
