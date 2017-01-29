@@ -20,6 +20,6 @@ final class ViewServiceProvider extends ServiceProvider
         /** @var \Illuminate\Contracts\View\Factory $factory */
         $factory = $this->app->make(\Illuminate\Contracts\View\Factory::class);
 
-        $factory->composer('dosing_requests.all', Composer\DosingRequest\ViewAllRequests::class);
+        $factory->composer('dosing_requests.results', Composer\DosingRequest\ViewAllRequests::class);
     }
 }

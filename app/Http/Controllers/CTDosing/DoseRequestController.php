@@ -48,7 +48,7 @@ final class DoseRequestController extends Controller
      */
     public function showDosingRequests(): View
     {
-        return view('dosing_requests.all');
+        return view('dosing_requests.results');
     }
 
     /**

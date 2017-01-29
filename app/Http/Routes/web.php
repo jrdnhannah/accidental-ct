@@ -32,5 +32,6 @@ $router->group(
     function (Router $router): void {
         $router->get('/request', ['uses' => 'DoseRequestController@showDosingRequestForm', 'as' => 'dose_request.form']);
         $router->post('/submit', ['uses' => 'DoseRequestController@submitDosingRequest', 'as' => 'dose_request.submit']);
+        $router->get('/results', ['uses' => 'DoseRequestController@showDosingRequests', 'as' => 'dose_request.results']);
     }
 );
