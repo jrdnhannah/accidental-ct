@@ -39,7 +39,15 @@ final class DoseRequestController extends Controller
      */
     public function showDosingRequestForm(): View
     {
-        return view('form.dosing_request');
+        return view('dosing_requests.form');
+    }
+
+    /**
+     * @return View
+     */
+    public function showDosingRequests(): View
+    {
+        return view('dosing_requests.all');
     }
 
     /**
