@@ -15,8 +15,8 @@ $router->group(
         'middleware' => ['web'],
     ],
     function (Router $router) {
-        $router->get('/register', ['uses' => 'RegisterController@showRegistrationForm']);
-        $router->get('/login',    ['uses' => 'LoginController@showLoginForm']);
+        $router->get('/register', ['uses' => 'RegisterController@showRegistrationForm', 'as' => 'auth.register']);
+        $router->get('/login',    ['uses' => 'LoginController@showLoginForm', 'as' => 'auth.login']);
 
         $router->post('/register', ['uses' => 'RegisterController@register', 'as' => 'auth.post_register']);
         $router->post('/login',    ['uses' => 'LoginController@login', 'as' => 'auth.post_login']);

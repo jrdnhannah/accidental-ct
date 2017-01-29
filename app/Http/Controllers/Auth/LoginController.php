@@ -54,6 +54,6 @@ class LoginController extends Controller
     {
         $request->session()->regenerate();
 
-        return $this->authenticated($request, $this->guard()->user()) ?: redirect()->to('dashboard');
+        return $this->authenticated($request, $this->guard()->user()) ?: redirect()->route('dose_request.form');
     }
 }

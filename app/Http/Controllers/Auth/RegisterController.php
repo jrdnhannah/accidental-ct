@@ -56,6 +56,6 @@ class RegisterController extends Controller
             $request->request->get('password')
         ));
 
-        return redirect()->to('/foo');
+        return redirect()->route('auth.login');
     }
 }

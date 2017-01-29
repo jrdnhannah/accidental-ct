@@ -86,6 +86,6 @@ final class DoseRequestController extends Controller
             )
         );
 
-        return redirect('/');
+        return redirect()->route('dose_request.results');
     }
 }
